@@ -9,7 +9,6 @@
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
-    - [🚀 Live Demo](#live-demo)
   - [💻 Getting Started ](#-getting-started-)
     - [Prerequisites](#prerequisites)
     - [Setup](#setup)
@@ -46,10 +45,6 @@
 - **Read a random math-related quote**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-## 🚀 Live Demo <a name="live-demo"></a>
-
--[Live Demo Link](https://veronica365.github.io/react-math-magicians/dist/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -146,7 +141,7 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] Add tasks that were for the student C.
+- [ ] Add more tests and improve the application CSS styles
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
