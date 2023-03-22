@@ -2,58 +2,23 @@ import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { BUTTON_VALUES, OPERATOR_VALUES } from '../constants';
 import calculate from '../logic/calculate';
-import operate from '../logic/operate';
 
 export const Calculator = () => {
   const [state, setState] = useState({});
-  const { one, two, symbol } = state;
-  const handleClick = ({ target: { name } }) => {
-    const { next, operation } = calculate({}, name);
-    if (operation) {
-      return setState((prev) => ({
-        ...prev,
-        one: prev.one || prev.total || 0,
-        symbol: operation,
-      }));
-    }
-    if (symbol && next) {
-      return setState((prev) => ({
-        ...prev,
-        two: `${prev.two || ''}${next || ''}`,
-      }));
-    }
-
-    if (next) {
-      return setState((prev) => ({
-        ...prev,
-        one: `${prev.one || ''}${next || ''}`,
-      }));
-    }
-
-    if (next === null && operation === null) {
-      return setState({});
-    }
-
-    if (!one || !two || !symbol) return 0;
-    const result = operate(one, two, symbol);
-    return setState({
-      two: '',
-      one: '',
-      symbol: '',
-      total: result,
-    });
+  const handleClick = (e) => {
+    const result = calculate({ ...state }, e.target.name);
+    setState((prev) => ({ ...prev, ...result }));
   };
+  const { total, operation, next } = state;
   return (
     <div className="calculator">
       <div className="screen">
         <small>
-          {one}
-          {' '}
-          {symbol}
-          {' '}
-          {two}
+          {total}
+          {operation}
+          {next}
         </small>
-        <Displaybar value={String(state.total || 0)} />
+        <Displaybar value={String(total || 0)} />
       </div>
       <div className="touch-pad">
         {BUTTON_VALUES.map((button) => (
