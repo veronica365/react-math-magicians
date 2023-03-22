@@ -2,7 +2,7 @@ export const BUTTON_VALUES = [
   'AC',
   '+/-',
   '%',
-  '/',
+  '÷',
   '7',
   '8',
   '9',
@@ -19,4 +19,4 @@ export const BUTTON_VALUES = [
   '.',
   '=',
 ];
-export const OPERATOR_VALUES = ['/', 'x', '+', '-', '='];
+export const OPERATOR_VALUES = ['÷', 'x', '+', '-', '='];
