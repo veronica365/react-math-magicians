@@ -58,7 +58,7 @@ body {
   text-align: center;
 }
 
-.wrapper .quote span {
+.wrapper .quote span.error {
   color: red;
   letter-spacing: 1px;
 }

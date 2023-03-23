@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 const Quote = ({ quote, author }) => (
   <div className="quote">
     <span>{quote}</span>
-    <span>--</span>
+    <span> -- </span>
     <span>{author}</span>
   </div>
 );
