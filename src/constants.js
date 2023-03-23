@@ -20,3 +20,5 @@ export const BUTTON_VALUES = [
   '=',
 ];
 export const OPERATOR_VALUES = ['÷', 'x', '+', '-', '='];
+export const API_KEY = 'KWZkMBos1Jn+EJpw00r+Dg==UMwE3a2hOegwk41O';
+export const API_URL = 'https://api.api-ninjas.com/v1';
