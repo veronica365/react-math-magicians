@@ -18,8 +18,7 @@ body {
 }
 
 .calculator {
-  max-width: 400px;
-  margin: 0 auto;
+  width: 300px;
 }
 
 .screen {
@@ -29,7 +28,7 @@ body {
 
 .display {
   width: 100%;
-  height: 50px;
+  height: 70px;
   color: #fff;
   display: flex;
   font-size: 30px;
@@ -39,11 +38,29 @@ body {
 
 .touch-pad {
   display: grid;
-  grid-auto-rows: 80px;
+  grid-auto-rows: 50px;
   background-color: #bedbe5;
   grid-template-columns: repeat(4, 1fr);
   border-bottom: 1px solid #767c85;
   border-right: 1px solid #767c85;
+}
+
+.wrapper {
+  padding-top: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper .quote {
+  max-width: 600px;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.wrapper .quote span {
+  color: red;
+  letter-spacing: 1px;
 }
 
 button {
