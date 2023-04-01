@@ -11,21 +11,26 @@ export const Calculator = () => {
   };
   const { total, operation, next } = state;
   return (
-    <div className="calculator">
-      <div className="screen">
-        <small>
-          {total}
-          {operation}
-          {next}
-        </small>
-        <Displaybar value={String(total || 0)} />
+    <>
+      <div className="calc-intro">
+        <h1>Let&apos;s do some maths!</h1>
       </div>
-      <div className="touch-pad">
-        {BUTTON_VALUES.map((button) => (
-          <Button key={button} handleClick={handleClick} text={button} />
-        ))}
+      <div className="calculator">
+        <div className="screen">
+          <small>
+            {total}
+            {operation}
+            {next}
+          </small>
+          <Displaybar value={String(total || 0)} />
+        </div>
+        <div className="touch-pad">
+          {BUTTON_VALUES.map((button) => (
+            <Button key={button} handleClick={handleClick} text={button} />
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
