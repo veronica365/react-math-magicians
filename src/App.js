@@ -1,25 +1,24 @@
-import { useEffect, useState } from 'react';
+import {
+  Route, BrowserRouter, Routes, Navigate,
+} from 'react-router-dom';
 import { Calculator } from './components/Calculator';
-import fetchQuotes from './logic/fetchQuotes';
-import Quote from './components/Quote';
-import ErrorOrLoading from './components/ErrorOrLoading';
+import Navbar from './components/Navbar';
+import Home from './components/Home';
+import QuoteFetch from './components/QuoteFetch';
 
 function App() {
-  const [state, setQuotes] = useState({ loading: true });
-  useEffect(() => {
-    const getResults = async () => {
-      const [result] = await (await fetchQuotes()).json();
-      if (result) return setQuotes(result);
-      return setQuotes({ loading: null });
-    };
-    getResults();
-  }, []);
   return (
-    <div className="wrapper">
-      <ErrorOrLoading loading={state.loading} error={state?.loading === null} />
-      {state.author && <Quote quote={state.quote} author={state.author} />}
-      <Calculator />
-    </div>
+    <BrowserRouter>
+      <Navbar />
+      <div className="wrapper">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/calculator" element={<Calculator />} />
+          <Route path="/quote" element={<QuoteFetch />} />
+          <Route path="*" element={<Navigate to="/" />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
